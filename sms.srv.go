@@ -74,7 +74,7 @@ func Transceiver() {
 			log.Printf("Short message from=%s to=%s: %s", src, dst, txt)
 		}
 	}
-	lm := rate.NewLimiter(rate.Limit(1000), 1) // Max rate of 1000/s.
+	lm := rate.NewLimiter(rate.Limit(10000000), 1) // Max rate of 10M messages per second
 	tx := &smpp.Transceiver{
 		Addr:        "194.176.111.242:8018",
 		User:        "DOSCredo",
